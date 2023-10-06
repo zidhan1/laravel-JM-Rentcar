@@ -88,7 +88,8 @@ Route::prefix('admin')->middleware((['auth', 'isAdmin']))->group(function () {
 Route::get('/sewa/{id}', [TransaksiController::class, 'tambahSewa'])->middleware(['auth', 'isUser'])->name('user.sewa');
 
 //routing user store sewa
-Route::put('/home{id}', [TransaksiController::class, 'store'])->middleware(['auth', 'isUser'])->name('sewa.store');
+Route::get('/payment/{id}', [TransaksiController::class, 'store'])->middleware(['auth', 'isUser'])->name('user.payment');
+Route::post('/payment/{id}', [TransaksiController::class, 'payment_post'])->middleware(['auth', 'isUser']);
 
 //routing user deskripsi
 Route::get('/deskripsi/{id}', [TransaksiController::class, 'viewDeskripsi'])->middleware(['auth', 'isUser'])->name('user.deskripsi');

@@ -5,11 +5,16 @@
 @section('content')
 
 <div class="container-fluid">
-    <form action="{{route('sewa.store',$data->id)}}" method="POST" enctype="multipart/form-data">
+    <script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-9Kth_vn9qLnTLdae"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
+    <form action="{{route('user.payment',  $data->id)}}" method="GET" id="sewa_form">
         @csrf
-        @method('PUT')
         <div class="row">
             <div class="col-md-4">
+                <div class="form-group">
+                    <label>Jumlah hari sewa</label>
+                    <input type="number" class="form-control" name="jml_hari" id="jml_hari">
+                </div>
                 <div class="form-group">
                     <label>Tanggal Sewa</label>
                     <input type="date" class="form-control" name="tgl_sewa" id="tgl_sewa">
@@ -19,20 +24,10 @@
                     <input type="date" class="form-control" name="tgl_kembali" id="tgl_kembali">
                 </div>
                 <div class="form-group">
-                    <label>Metode Pembayaran</label>
-                    <select name="pembayaran" id="pembayaran" class="form-control">
-                        <option value="BANK BCA">BANK BCA</option>
-                    </select>
-                </div>
-                <div class="form-group">
                     <label>Jaminan</label>
                     <select name="jaminan" id="jaminan" class="form-control">
                         <option value="KTP">KTP</option>
                     </select>
-                </div>
-                <div class="form-group">
-                    <label>Bukti Transfer</label>
-                    <input type="file" class="form-control" name="bukti" id="bukti">
                 </div>
             </div>
             <div class="col-md-4 mt-3">
@@ -48,6 +43,8 @@
             </div>
         </div>
     </form>
+    <br>
 </div>
+
 
 @endsection

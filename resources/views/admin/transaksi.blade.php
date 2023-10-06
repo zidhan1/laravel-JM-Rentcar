@@ -25,8 +25,8 @@
                             <th style="width:2%;">ID CS</th>
                             <th style="width:8%;">Tanggal Sewa</th>
                             <th style="width:8%;">Tanggal Kembali</th>
-                            <th style="width:6%;">Payment</th>
-                            <th style="width:5%;">Jaminan</th>
+                            <th style="width:6%;">Jaminan</th>
+                            <th style="width:5%;">Total</th>
                             <th style="width:8%;">Bukti</th>
                             <th style="width:6%;">Aksi</th>
                         </tr>
@@ -38,9 +38,9 @@
                             <td>{{$dataTransaksi->id_user}}</td>
                             <td>{{$dataTransaksi->tgl_sewa}}</td>
                             <td>{{$dataTransaksi->tgl_kembali}}</td>
-                            <td>{{$dataTransaksi->pembayaran}}</td>
                             <td>{{$dataTransaksi->jaminan}}</td>
-                            <td><img src="{{asset('img/bukti/'.$dataTransaksi->bukti)}}" alt="" style="width:40px; height:40px;"></td>
+                            <td>{{$dataTransaksi->amount}}</td>
+                            <td><a href="{{$dataTransaksi->invoice}}" class="btn btn-warning">Invoice</a></td>
                             <td>
                                 <form action="{{route('destroy.transaksi', $dataTransaksi->id)}}" method="post">
                                     @csrf

@@ -36,6 +36,7 @@
     <link href="{{ asset('assets/css/index.css')}}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{{ asset('assets/css/responsive.css') }}" rel="stylesheet" />
+
 </head>
 
 <body>
@@ -111,6 +112,8 @@
     </div>
     <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('assets/js/scripts.js') }}"></script>
+
+
 </body>
 
 </html>

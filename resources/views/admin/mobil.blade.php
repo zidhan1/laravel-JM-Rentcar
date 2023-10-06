@@ -17,7 +17,7 @@
             <div class="card-body">
                 <a href="{{url('admin/tambahmobil')}}" class="btn btn-primary">+Tambah Data</a>
                 <br><br>
-                <table id="datatablesSimple" class="table-bordered table-hoover table-striped mb-3">
+                <table id="tabel-produk" class="table-bordered table-hoover table-striped mb-3">
                     <thead>
                         <tr class="text-center">
                             <th style="width:3%;">No</th>
@@ -54,4 +54,11 @@
         </div>
     </div>
 </div>
-@endsection
+@stop
+@push('scripts')
+<script>
+    $(function() {
+        $('#tabel-produk').DataTable();
+    });
+</script>
+@endpush
